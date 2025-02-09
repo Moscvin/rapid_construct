@@ -27,7 +27,8 @@
                 <nav class="main-nav">
                     <!-- ***** Logo Start ***** -->
                     <a href="{{ route('home') }}" class="logo">
-                        <h1>Villa</h1>
+                        <img src="{{ asset('assets/images/logo-2.png') }}" style="height: 80px; width:170px"
+                            alt="Villa Logo">
                     </a>
                     <!-- ***** Logo End ***** -->
                     <!-- ***** Menu Start ***** -->
@@ -37,12 +38,6 @@
                     <a class='menu-trigger'>
                         <span>Menu</span>
                     </a>
-                    <!-- ***** Menu End ***** -->
-                    <div class="language-switcher">
-                        <a href="{{ route('set-locale', app()->getLocale() == 'ru' ? 'ro' : 'ru') }}">
-                            {{ app()->getLocale() == 'ru' ? 'RO' : 'RU' }}
-                        </a>
-                    </div>
                 </nav>
             </div>
         </div>

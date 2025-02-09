@@ -17,7 +17,7 @@
     @include('layouts.seo')
 </head>
 
-<body>
+<body class="lang-{{ app()->getLocale() }}">
     <div id="js-preloader" class="js-preloader">
         <div class="preloader-inner">
             <span class="dot"></span>

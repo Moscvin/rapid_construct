@@ -13,13 +13,15 @@ class ServiceController extends Controller
      */
     public function index()
     {
-        $page = Page::find(5);
-        $this->seoHelper->getSEO($page);
+        $page = Page::find(2);
+        if ($page) {
+            $this->seoHelper->getSEO($page);
+        }
 
         $services = Service::activeAndOrderBy('order')->take(8)->get();
         $specialServices = Service::activeAndOrderBy('order')->where('special', true)->take(4)->get();
 
-        return view('services.index', compact('services', 'page', 'specialServices'));
+        return view('properties.index', compact('services', 'page', 'specialServices'));
     }
 
     /**
@@ -29,6 +31,6 @@ class ServiceController extends Controller
     {
         $this->seoHelper->getSEO($service);
 
-        return view('services.detail.index', compact('service'));
+        return view('properties.detail.index', compact('service'));
     }
 }
