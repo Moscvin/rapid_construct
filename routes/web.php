@@ -11,8 +11,8 @@ Route::group(['prefix' => LocaleMiddleware::getLocale()], function () {
     Route::get('/', [PageController::class, 'index'])->name('home');
     Route::get('/about', [PageController::class, 'about'])->name('about');
 
-    Route::get('/services', [ServiceController::class, 'index'])->name('services');
-    Route::get('/service/{service:slug}', [ServiceController::class, 'show'])->name('service');
+    Route::get('/properties', [ServiceController::class, 'index'])->name('properties');
+    Route::get('/property/{property:slug}', [ServiceController::class, 'show'])->name('property-details');
 
     Route::get('/blog', [BlogController::class, 'index'])->name('blog');
     Route::get('/blog/{blog:slug}', [BlogController::class, 'show'])->name('blog.show');

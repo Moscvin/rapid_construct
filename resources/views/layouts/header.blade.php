@@ -3,8 +3,8 @@
         <div class="row">
             <div class="col-lg-8 col-md-8">
                 <ul class="info">
-                    <li><i class="fa fa-envelope"></i> rapidconstructmda@gmail.com</li>
-                    <li><i class="fa fa-map"></i> Sunny Isles Beach, FL 33160</li>
+                    <li><i class="fa fa-envelope"></i>{{ $vars['email'] }}</li>
+                    <li><i class="fa fa-map"></i>{{ $vars['address'] }} </li>
                 </ul>
             </div>
             <div class="col-lg-4 col-md-4">
@@ -26,22 +26,23 @@
             <div class="col-12">
                 <nav class="main-nav">
                     <!-- ***** Logo Start ***** -->
-                    <a href="index.html" class="logo">
+                    <a href="{{ route('home') }}" class="logo">
                         <h1>Villa</h1>
                     </a>
                     <!-- ***** Logo End ***** -->
                     <!-- ***** Menu Start ***** -->
                     <ul class="nav">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="properties.html">Properties</a></li>
-                        <li><a href="property-details.html" class="active">Property Details</a></li>
-                        <li><a href="contact.html">Contact Us</a></li>
-                        <li><a href="#"><i class="fa fa-calendar"></i> Schedule a visit</a></li>
+                        @include('partials.nav')
                     </ul>
                     <a class='menu-trigger'>
                         <span>Menu</span>
                     </a>
                     <!-- ***** Menu End ***** -->
+                    <div class="language-switcher">
+                        <a href="{{ route('set-locale', app()->getLocale() == 'ru' ? 'ro' : 'ru') }}">
+                            {{ app()->getLocale() == 'ru' ? 'RO' : 'RU' }}
+                        </a>
+                    </div>
                 </nav>
             </div>
         </div>

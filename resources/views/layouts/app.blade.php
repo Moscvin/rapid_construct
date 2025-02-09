@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ app()->getLocale() }}">
 
 <head>
     <meta charset="utf-8" />
@@ -13,10 +13,11 @@
     <link rel="stylesheet" href="{{ asset('assets/css/owl.css') }}" />
     <link rel="stylesheet" href="{{ asset('assets/css/animate.css') }}" />
     <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+
+    @include('layouts.seo')
 </head>
 
 <body>
-    <!-- ***** Preloader Start ***** -->
     <div id="js-preloader" class="js-preloader">
         <div class="preloader-inner">
             <span class="dot"></span>
@@ -27,7 +28,6 @@
             </div>
         </div>
     </div>
-    <!-- ***** Preloader End ***** -->
 
     @include('layouts.header')
 
