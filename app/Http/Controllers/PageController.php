@@ -7,10 +7,12 @@ use App\Models\Page;
 use App\Models\Partner;
 use App\Models\Question;
 use App\Models\Service;
+use App\Models\Context;
 use App\SEOHelper;
 use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Cache;
+
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Request as HttpRequest;
 
@@ -29,12 +31,15 @@ class PageController extends Controller
         $counters = Cache::rememberForever('counters', function () {
             return Counter::orderBy('order')->get();
         });
+        $contexts = Cache::rememberForever('contexts', function () {
+            return Context::get();
+        });
 
         $services = Service::activeAndOrderBy('order')->take(8)->get();
         $partners = Partner::activeAndOrderBy('order')->get();
         $questions = Question::orderBy('order')->get();
 
-        return view('home.index', compact('page', 'counters', 'services', 'partners', 'questions'));
+        return view('home.index', compact('page', 'counters', 'services', 'partners', 'questions', 'contexts'));
     }
 
     /**
