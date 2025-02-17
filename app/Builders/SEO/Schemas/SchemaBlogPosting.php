@@ -4,15 +4,15 @@ namespace App\Builders\SEO\Schemas;
 
 class SchemaBlogPosting implements SchemaInterface
 {
-    public static function get($model = null): string
-    {
-        $image = url('storage/' . $model->image);
-        $websiteURL = url('/');
-        $logo = asset('assets/img/logo.png');
-        $createdAt = $model->created_at->format('Y-m-d');
-        $updatedAt = $model->updated_at->format('Y-m-d');
+  public static function get($model = null): string
+  {
+    $image = url('storage/' . $model->image);
+    $websiteURL = url('/');
+    $logo = asset('assets/img/logo.png');
+    $createdAt = $model->created_at->format('Y-m-d');
+    $updatedAt = $model->updated_at->format('Y-m-d');
 
-        return "
+    return "
             {
               \"@context\": \"https://schema.org\",
               \"@type\": \"BlogPosting\",
@@ -20,7 +20,7 @@ class SchemaBlogPosting implements SchemaInterface
               \"image\": \"$image\",
               \"author\": {
                     \"@type\": \"Organization\",
-                    \"name\": \"Bercut.MD\",
+                    \"name\": \"RapidConstruct.MD\",
                     \"url\": \"$websiteURL\"
               },
               \"publisher\": {
@@ -35,5 +35,5 @@ class SchemaBlogPosting implements SchemaInterface
                \"dateModified\": \"$updatedAt\"
             }
         ";
-    }
+  }
 }

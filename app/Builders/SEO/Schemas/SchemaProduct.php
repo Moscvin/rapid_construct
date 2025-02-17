@@ -17,7 +17,7 @@ class SchemaProduct implements SchemaInterface
               \"description\": \"$model->description\",
               \"brand\": {
                     \"@type\": \"Brand\",
-                    \"name\": \"Bercut.MD\"
+                    \"name\": \"Rapid_Construct.MD\"
               }
             }
         ";

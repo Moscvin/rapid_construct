@@ -20,7 +20,7 @@ class SchemaOrganization implements SchemaInterface
                 \"@type\": \"Organization\",
                 \"url\": \"$currentURL\",
                 \"logo\": \"$logo\",
-                \"brand\": \"Bercut.MD\",
+                \"brand\": \"RapidConstruct.md\",
                 \"email\": \"$email\",
                 \"contactPoint\": [{
                     \"@type\": \"ContactPoint\",
