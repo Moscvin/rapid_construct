@@ -194,7 +194,7 @@
             <div class="row">
                 <div class="col-lg-4 offset-lg-4">
                     <div class="section-heading text-center">
-                        <h6>| Properties</h6>
+                        <h6>| {{ $vars['proprietati'] }}</h6>
                         <h2>We Provide The Best Property You Like</h2>
                     </div>
                 </div>
