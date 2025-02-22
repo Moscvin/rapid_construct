@@ -38,13 +38,12 @@ class PageController extends Controller
             return Service::get();
         });
 
-        // $services = Service::activeAndOrderBy('order')->take(8)->get();
-        $partners = Partner::activeAndOrderBy('order')->get();
-        $questions = Question::orderBy('order')->get();
-
         $services = Cache::rememberForever('services', function () {
             return Service::orderBy('order')->get();
         });
+
+        $partners = Partner::activeAndOrderBy('order')->get();
+        $questions = Question::orderBy('order')->get();
 
         return view('home.index', compact('page', 'counters',  'partners', 'questions', 'contexts', 'options', 'services'));
     }

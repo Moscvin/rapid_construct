@@ -148,102 +148,39 @@
                         <div class="row">
                             <div class="nav-wrapper">
                                 <ul class="nav nav-tabs" role="tablist">
-                                    <li class="nav-item" role="presentation">
-                                        <button class="nav-link active" id="appartment-tab" data-bs-toggle="tab"
-                                            data-bs-target="#appartment" type="button" role="tab"
-                                            aria-controls="appartment" aria-selected="true">
-                                            Appartment
-                                        </button>
-                                    </li>
-                                    <li class="nav-item" role="presentation">
-                                        <button class="nav-link" id="villa-tab" data-bs-toggle="tab"
-                                            data-bs-target="#villa" type="button" role="tab" aria-controls="villa"
-                                            aria-selected="false">
-                                            Villa House
-                                        </button>
-                                    </li>
-                                    <li class="nav-item" role="presentation">
-                                        <button class="nav-link" id="penthouse-tab" data-bs-toggle="tab"
-                                            data-bs-target="#penthouse" type="button" role="tab"
-                                            aria-controls="penthouse" aria-selected="false">
-                                            Penthousesss
-                                        </button>
-                                    </li>
+                                    @foreach ($services as $service)
+                                        <li class="nav-item" role="presentation">
+                                            <button class="nav-link @if ($loop->first) active @endif"
+                                                id="{{ $service->slug }}-tab" data-bs-toggle="tab"
+                                                data-bs-target="#{{ $service->slug }}" type="button" role="tab"
+                                                aria-controls="{{ $service->slug }}"
+                                                aria-selected="{{ $loop->first ? 'true' : 'false' }}">
+                                                {{ $service->title }}
+                                            </button>
+                                        </li>
+                                    @endforeach
                                 </ul>
                             </div>
                             <div class="tab-content" id="myTabContent">
-                                <div class="tab-pane fade show active" id="appartment" role="tabpanel"
-                                    aria-labelledby="appartment-tab">
-                                    <div class="row">
-                                        <div class="col-lg-8">
-                                            <img src="assets/images/deal-01.jpg" alt="" />
-                                        </div>
-                                        <div class="col-lg-4">
-                                            <h4>Extra Info About Property</h4>
-                                            <p>
-                                                Lorem ipsum dolor sit amet, consectetur adipiscing
-                                                elit, do eiusmod tempor pack incididunt ut labore et
-                                                dolore magna aliqua quised ipsum suspendisse.
-                                                <br /><br />When you need free CSS templates, you can
-                                                simply type TemplateMo in any search engine website.
-                                                In addition, you can type TemplateMo Portfolio,
-                                                TemplateMo One Page Layouts, etc.
-                                            </p>
-                                            <div class="icon-button">
-                                                <a href="property-details.html"><i class="fa fa-calendar"></i>
-                                                    Schedule a visit</a>
+                                @foreach ($services as $service)
+                                    <div class="tab-pane fade @if ($loop->first) show active @endif"
+                                        id="{{ $service->slug }}" role="tabpanel"
+                                        aria-labelledby="{{ $service->slug }}-tab">
+                                        <div class="row">
+                                            <div class="col-lg-8">
+                                                <img src="{{ asset('storage/' . $service->image) }}"
+                                                    alt="{{ $service->title }}" />
+                                            </div>
+                                            <div class="col-lg-4">
+                                                <p>{!! $service->text !!}</p>
+                                                <div class="icon-button">
+                                                    <a href="property-details.html"><i class="fa fa-calendar"></i>
+                                                        {{ $vars['programeaza_o_vizita'] }}</a>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="tab-pane fade" id="villa" role="tabpanel" aria-labelledby="villa-tab">
-                                    <div class="row">
-                                        <div class="col-lg-8">
-                                            <img src="assets/images/deal-02.jpg" alt="" />
-                                        </div>
-                                        <div class="col-lg-4">
-                                            <h4>Detail Info About Villa</h4>
-                                            <p>
-                                                Lorem ipsum dolor sit amet, consectetur adipiscing
-                                                elit, do eiusmod tempor pack incididunt ut labore et
-                                                dolore magna aliqua quised ipsum suspendisse.
-                                                <br /><br />Swag fanny pack lyft blog twee. JOMO
-                                                ethical copper mug, succulents typewriter shaman DIY
-                                                kitsch twee taiyaki fixie hella venmo after messenger
-                                                poutine next level humblebrag swag franzen.
-                                            </p>
-                                            <div class="icon-button">
-                                                <a href="property-details.html"><i class="fa fa-calendar"></i>
-                                                    Schedule a visit</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="tab-pane fade" id="penthouse" role="tabpanel"
-                                    aria-labelledby="penthouse-tab">
-                                    <div class="row">
-
-                                        <div class="col-lg-8">
-                                            <img src="assets/images/deal-03.jpg" alt="" />
-                                        </div>
-                                        <div class="col-lg-4">
-                                            <h4>Extra Info About Penthouse</h4>
-                                            <p>
-                                                Lorem ipsum dolor sit amet, consectetur adipiscing
-                                                elit, do eiusmod tempor pack incididunt ut labore et
-                                                dolore magna aliqua quised ipsum suspendisse.
-                                                <br /><br />Swag fanny pack lyft blog twee. JOMO
-                                                ethical copper mug, succulents typewriter shaman DIY
-                                                kitsch twee taiyaki fixie hella venmo after messenger
-                                                poutine next level humblebrag swag franzen.
-                                            </p>
-                                            <div class="icon-button">
-                                                <a href="property-details.html"><i class="fa fa-calendar"></i>
-                                                    Schedule a visit</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                                @endforeach
                             </div>
                         </div>
                     </div>
@@ -267,17 +204,9 @@
                     <div class="item">
                         <a href="property-details.html"><img src="assets/images/property-01.jpg" alt="" /></a>
                         <span class="category">Luxury Villa</span>
-                        <h6>$2.264.000</h6>
                         <h4>
                             <a href="property-details.html">18 New Street Miami, OR 97219</a>
                         </h4>
-                        <ul>
-                            <li>Bedrooms: <span>8</span></li>
-                            <li>Bathrooms: <span>8</span></li>
-                            <li>Area: <span>545m2</span></li>
-                            <li>Floor: <span>3</span></li>
-                            <li>Parking: <span>6 spots</span></li>
-                        </ul>
                         <div class="main-button">
                             <a href="property-details.html">Schedule a visit</a>
                         </div>
