@@ -34,12 +34,19 @@ class PageController extends Controller
         $contexts = Cache::rememberForever('contexts', function () {
             return Context::get();
         });
+        $options = Cache::rememberForever('options', function () {
+            return Service::get();
+        });
 
-        $services = Service::activeAndOrderBy('order')->take(8)->get();
+        // $services = Service::activeAndOrderBy('order')->take(8)->get();
         $partners = Partner::activeAndOrderBy('order')->get();
         $questions = Question::orderBy('order')->get();
 
-        return view('home.index', compact('page', 'counters', 'services', 'partners', 'questions', 'contexts'));
+        $services = Cache::rememberForever('services', function () {
+            return Service::orderBy('order')->get();
+        });
+
+        return view('home.index', compact('page', 'counters',  'partners', 'questions', 'contexts', 'options', 'services'));
     }
 
     /**

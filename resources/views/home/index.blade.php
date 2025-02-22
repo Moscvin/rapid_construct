@@ -139,8 +139,8 @@
             <div class="row">
                 <div class="col-lg-4">
                     <div class="section-heading">
-                        <h6>| Best Deal</h6>
-                        <h2>Find Your Best Deal Right Now!</h2>
+                        <h6>| {{ $vars['cele_mai_bune_optiuni'] }}</h6>
+                        <h2>{{ $vars['gaseste_ti_cea_mai_buna_oferta_chiar_acum'] }}</h2>
                     </div>
                 </div>
                 <div class="col-lg-12">
@@ -175,21 +175,10 @@
                                 <div class="tab-pane fade show active" id="appartment" role="tabpanel"
                                     aria-labelledby="appartment-tab">
                                     <div class="row">
-                                        <div class="col-lg-3">
-                                            <div class="info-table">
-                                                <ul>
-                                                    <li>Total Flat Space <span>185 m2</span></li>
-                                                    <li>Floor number <span>26th</span></li>
-                                                    <li>Number of rooms <span>4</span></li>
-                                                    <li>Parking Available <span>Yes</span></li>
-                                                    <li>Payment Process <span>Bank</span></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-6">
+                                        <div class="col-lg-8">
                                             <img src="assets/images/deal-01.jpg" alt="" />
                                         </div>
-                                        <div class="col-lg-3">
+                                        <div class="col-lg-4">
                                             <h4>Extra Info About Property</h4>
                                             <p>
                                                 Lorem ipsum dolor sit amet, consectetur adipiscing
@@ -209,21 +198,10 @@
                                 </div>
                                 <div class="tab-pane fade" id="villa" role="tabpanel" aria-labelledby="villa-tab">
                                     <div class="row">
-                                        <div class="col-lg-3">
-                                            <div class="info-table">
-                                                <ul>
-                                                    <li>Total Flat Space <span>250 m2</span></li>
-                                                    <li>Floor number <span>26th</span></li>
-                                                    <li>Number of rooms <span>5</span></li>
-                                                    <li>Parking Available <span>Yes</span></li>
-                                                    <li>Payment Process <span>Bank</span></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-6">
+                                        <div class="col-lg-8">
                                             <img src="assets/images/deal-02.jpg" alt="" />
                                         </div>
-                                        <div class="col-lg-3">
+                                        <div class="col-lg-4">
                                             <h4>Detail Info About Villa</h4>
                                             <p>
                                                 Lorem ipsum dolor sit amet, consectetur adipiscing
@@ -244,21 +222,11 @@
                                 <div class="tab-pane fade" id="penthouse" role="tabpanel"
                                     aria-labelledby="penthouse-tab">
                                     <div class="row">
-                                        <div class="col-lg-3">
-                                            <div class="info-table">
-                                                <ul>
-                                                    <li>Total Flat Space <span>320 m2</span></li>
-                                                    <li>Floor number <span>34th</span></li>
-                                                    <li>Number of rooms <span>6</span></li>
-                                                    <li>Parking Available <span>Yes</span></li>
-                                                    <li>Payment Process <span>Bank</span></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-6">
+
+                                        <div class="col-lg-8">
                                             <img src="assets/images/deal-03.jpg" alt="" />
                                         </div>
-                                        <div class="col-lg-3">
+                                        <div class="col-lg-4">
                                             <h4>Extra Info About Penthouse</h4>
                                             <p>
                                                 Lorem ipsum dolor sit amet, consectetur adipiscing
