@@ -166,7 +166,7 @@
                                         <button class="nav-link" id="penthouse-tab" data-bs-toggle="tab"
                                             data-bs-target="#penthouse" type="button" role="tab"
                                             aria-controls="penthouse" aria-selected="false">
-                                            Penthouse
+                                            Penthousesss
                                         </button>
                                     </li>
                                 </ul>
