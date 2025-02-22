@@ -39,13 +39,16 @@ class PageController extends Controller
         });
 
         $services = Cache::rememberForever('services', function () {
-            return Service::orderBy('order')->get();
+            return Service::where('special', 0)->orderBy('order')->get();
         });
 
+        $types = Cache::rememberForever('types', function () {
+            return Service::where('special', 1)->orderBy('order')->get();
+        });
         $partners = Partner::activeAndOrderBy('order')->get();
         $questions = Question::orderBy('order')->get();
 
-        return view('home.index', compact('page', 'counters',  'partners', 'questions', 'contexts', 'options', 'services'));
+        return view('home.index', compact('page', 'counters',  'partners', 'questions', 'contexts', 'options', 'services', 'types'));
     }
 
     /**
