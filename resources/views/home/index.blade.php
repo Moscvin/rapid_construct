@@ -84,7 +84,7 @@
                 <div class="col-lg-4 offset-lg-4">
                     <div class="section-heading text-center">
                         <h6>| Video View</h6>
-                        <h2>Get Closer View & Different Feeling</h2>
+                        <h2>{{ $vars['obtine_o_privire_mai_apropiata_si_o_senzatie_diferita'] }}</h2>
                     </div>
                 </div>
             </div>
@@ -224,8 +224,8 @@
             <div class="row">
                 <div class="col-lg-4 offset-lg-4">
                     <div class="section-heading text-center">
-                        <h6>| Contact Us</h6>
-                        <h2>Get In Touch With Our Agents</h2>
+                        <h6>{{ $vars['contact_us'] }}</h6>
+                        <h2>{{ $vars['ia_legatura_cu_agentii_nostri'] }}</h2>
                     </div>
                 </div>
             </div>
@@ -238,64 +238,72 @@
                 <div class="col-lg-7">
                     <div id="map">
                         <iframe
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12469.776493332698!2d-80.14036379941481!3d25.907788681148624!2m3!1f357.26927939317244!2f20.870722720054623!3f0!3m2!1i1024!2i768!4f35!3m3!1m2!1s0x88d9add4b4ac788f%3A0xe77469d09480fcdb!2sSunny%20Isles%20Beach!5e1!3m2!1sen!2sth!4v1642869952544!5m2!1sen!2sth"
-                            width="100%" height="500px" frameborder="0"
-                            style="
-                  border: 0;
-                  border-radius: 10px;
-                  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.15);
-                "
-                            allowfullscreen=""></iframe>
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2721.4181767188697!2d28.85168372673415!3d46.99276143016387!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40c97eadef0b0109%3A0x8b32c5f4178c482a!2zU3RyYWRhIE5pY29sYWUgWmVsaW5za2kgMTUsIENoaciZaW7Eg3UsINCc0L7Qu9C00L7QstCw!5e0!3m2!1sru!2s!4v1740684709875!5m2!1sru!2s"
+                            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"></iframe>
                     </div>
                     <div class="row">
                         <div class="col-lg-6">
                             <div class="item phone">
                                 <img src="assets/images/phone-icon.png" alt="" style="max-width: 52px" />
-                                <h6>010-020-0340<br /><span>Phone Number</span></h6>
+                                <h7>
+                                    <a style="color: #000"
+                                        href="tel:{{ $vars['numar_de_telefon'] }}">{{ $vars['phone'] }}</a><br />
+                                    <span><a style="color: #000"
+                                            href="tel:{{ $vars['numar_de_telefon'] }}">{{ $vars['numar_de_telefon'] }}</a></span>
+                                </h7>
                             </div>
                         </div>
                         <div class="col-lg-6">
                             <div class="item email">
                                 <img src="assets/images/email-icon.png" alt="" style="max-width: 52px" />
-                                <h6>info@villa.co<br /><span>Business Email</span></h6>
+                                <h7>
+                                    <a style="color: #000"
+                                        href="https://www.google.com/maps/search/?api=1&query={{ urlencode($vars['adress2']) }}"
+                                        target="_blank">
+                                        {{ $vars['adress2'] }}
+                                    </a><br />
+                                    <span>Adresa</span>
+                                </h7>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-5">
-                    <form id="contact-form" action="" method="post">
+                    <form id="contact-form" action="{{ route('contact.store') }}" method="post">
+                        @csrf
                         <div class="row">
                             <div class="col-lg-12">
                                 <fieldset>
-                                    <label for="name">Full Name</label>
+                                    <label for="name">Numele</label>
                                     <input type="name" name="name" id="name" placeholder="Your Name..."
                                         autocomplete="on" required />
                                 </fieldset>
                             </div>
                             <div class="col-lg-12">
                                 <fieldset>
-                                    <label for="email">Email Address</label>
-                                    <input type="text" name="email" id="email" pattern="[^ @]*@[^ @]*"
+                                    <label for="email">Adresa Email</label>
+                                    <input type="email" name="email" id="email" pattern="[^ @]*@[^ @]*"
                                         placeholder="Your E-mail..." required="" />
                                 </fieldset>
                             </div>
                             <div class="col-lg-12">
                                 <fieldset>
-                                    <label for="subject">Subject</label>
-                                    <input type="subject" name="subject" id="subject" placeholder="Subject..."
+                                    <label for="phone">Telefon</label>
+                                    <input type="text" name="phone" id="phone" placeholder="Telefon..."
                                         autocomplete="on" />
                                 </fieldset>
                             </div>
                             <div class="col-lg-12">
                                 <fieldset>
-                                    <label for="message">Message</label>
-                                    <textarea name="message" id="message" placeholder="Your Message"></textarea>
+                                    <label for="message">Mesaj</label>
+                                    <textarea name="message" id="message" placeholder="Mesajul.."></textarea>
                                 </fieldset>
                             </div>
                             <div class="col-lg-12">
                                 <fieldset>
                                     <button type="submit" id="form-submit" class="orange-button">
-                                        Send Message
+                                        {{ $vars['trimite_mesaj'] }}
                                     </button>
                                 </fieldset>
                             </div>
@@ -305,8 +313,4 @@
             </div>
         </div>
     </div>
-
-    </body>
-
-    </html>
 @endsection

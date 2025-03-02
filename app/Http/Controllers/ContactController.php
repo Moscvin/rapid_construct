@@ -25,8 +25,8 @@ class ContactController extends Controller
 
     public function store(ContactRequest $request)
     {
-        Contact::create($request->getDTO()->toArray());
+        Contact::create($request->validated());
 
-        return redirect()->back()->with('success', $this->vars['success__sended']);
+        return redirect()->back()->with('success', 'Your message has been sent successfully.');
     }
 }

@@ -9,10 +9,9 @@ class ContactDTO implements DTO
     public function __construct(
         public string $name,
         public string $email,
-        public string $message
-    )
-    {
-    }
+        public string $phone,
+        public string $message,
+    ) {}
 
 
     public
@@ -21,6 +20,7 @@ class ContactDTO implements DTO
         return [
             'name' => $this->name,
             'email' => $this->email,
+            'phone' => $this->phone,
             'message' => $this->message,
         ];
     }

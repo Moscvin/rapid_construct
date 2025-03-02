@@ -9,6 +9,7 @@ use Illuminate\Database\Eloquent\Model;
 use MoonShine\Decorations\Block;
 use MoonShine\Fields\Email;
 use MoonShine\Fields\ID;
+use MoonShine\Fields\Phone;
 use MoonShine\Fields\Switcher;
 use MoonShine\Fields\Text;
 use MoonShine\Fields\Textarea;
@@ -35,6 +36,7 @@ class ContactResource extends ModelResource
                 ID::make()->sortable(),
                 Text::make(trans('moonshine::general.name'), 'name'),
                 Email::make(trans('moonshine::ui.resource.email'), 'email'),
+                Phone::make(trans('moonshine::general.phone'), 'phone'),
                 Textarea::make(trans('moonshine::general.message'), 'message')->hideOnIndex(),
                 Switcher::make(trans('moonshine::general.is_read'), 'is_read')
             ]),
@@ -46,6 +48,7 @@ class ContactResource extends ModelResource
         return [
             'name' => 'required',
             'email' => 'required|email',
+            'phone' => 'nullable',
             'message' => 'required',
         ];
     }
