@@ -34,8 +34,10 @@ class QuestionResource extends ModelResource
                     ->removable(),
                 Translatable::make(trans('moonshine::general.answer'), 'answer')
                     ->languages(array_keys(config('languages.array')))
+                    ->tinyMce()
+                    ->hideOnIndex()
+                    ->required()
                     ->priorityLanguages([config('languages.priority')])
-                    ->textarea()
                     ->removable(),
                 Number::make(trans('moonshine::general.order'), 'order')
                     ->default($order + 1),

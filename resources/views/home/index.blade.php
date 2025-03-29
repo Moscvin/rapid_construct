@@ -1,7 +1,6 @@
 @extends('layouts.app')
 
 @section('title')
-
 @section('content')
     <div class="main-banner">
         <div class="owl-carousel owl-banner">
@@ -18,7 +17,6 @@
             @endforeach
         </div>
     </div>
-
     <div class="featured section">
         <div class="container">
             <div class="row">
@@ -124,7 +122,7 @@
                             <div class="col-lg-4">
                                 <div class="counter">
                                     <h2 class="timer count-title count-number" data-to="24" data-speed="1000"></h2>
-                                    <p class="count-text">Awwards<br />Won 2023</p>
+                                    <p class="count-text">Awwards test<br />Won 2023</p>
                                 </div>
                             </div>
                         </div>
@@ -239,7 +237,7 @@
                     <div id="map">
                         <iframe
                             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2721.4181767188697!2d28.85168372673415!3d46.99276143016387!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40c97eadef0b0109%3A0x8b32c5f4178c482a!2zU3RyYWRhIE5pY29sYWUgWmVsaW5za2kgMTUsIENoaciZaW7Eg3UsINCc0L7Qu9C00L7QstCw!5e0!3m2!1sru!2s!4v1740684709875!5m2!1sru!2s"
-                            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                            width="300" height="300" style="border:0;" allowfullscreen="" loading="lazy"
                             referrerpolicy="no-referrer-when-downgrade"></iframe>
                     </div>
                     <div class="row">
@@ -276,7 +274,7 @@
                             <div class="col-lg-12">
                                 <fieldset>
                                     <label for="name">Numele</label>
-                                    <input type="name" name="name" id="name" placeholder="Your Name..."
+                                    <input type="name" name="name" id="name" placeholder="Numele..."
                                         autocomplete="on" required />
                                 </fieldset>
                             </div>
@@ -284,7 +282,7 @@
                                 <fieldset>
                                     <label for="email">Adresa Email</label>
                                     <input type="email" name="email" id="email" pattern="[^ @]*@[^ @]*"
-                                        placeholder="Your E-mail..." required="" />
+                                        placeholder="Email..." required="" />
                                 </fieldset>
                             </div>
                             <div class="col-lg-12">
