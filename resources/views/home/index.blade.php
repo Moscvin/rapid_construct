@@ -59,7 +59,7 @@
                         <ul>
                             <li>
                                 <img src="assets/images/info-icon-02.png" alt="" style="max-width: 52px" />
-                                <h4>Contract<br /><span>Contract Ready</span></h4>
+                                <h4>Contracttest<br /><span>Contract Ready</span></h4>
                             </li>
                             <li>
                                 <img src="assets/images/info-icon-03.png" alt="" style="max-width: 52px" />
@@ -234,12 +234,12 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-7">
-                    <div id="map">
+                    {{-- <div id="map">
                         <iframe
                             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2721.4181767188697!2d28.85168372673415!3d46.99276143016387!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40c97eadef0b0109%3A0x8b32c5f4178c482a!2zU3RyYWRhIE5pY29sYWUgWmVsaW5za2kgMTUsIENoaciZaW7Eg3UsINCc0L7Qu9C00L7QstCw!5e0!3m2!1sru!2s!4v1740684709875!5m2!1sru!2s"
                             width="300" height="300" style="border:0;" allowfullscreen="" loading="lazy"
                             referrerpolicy="no-referrer-when-downgrade"></iframe>
-                    </div>
+                    </div> --}}
                     <div class="row">
                         <div class="col-lg-6">
                             <div class="item phone">
